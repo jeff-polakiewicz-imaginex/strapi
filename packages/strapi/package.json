@@ -72,11 +72,14 @@
     "strapi-generate-plugin": "3.0.0-alpha.25.2",
     "strapi-generate-policy": "3.0.0-alpha.25.2",
     "strapi-generate-service": "3.0.0-alpha.25.2",
-    "strapi-utils": "3.0.0-alpha.25.2"
+    "strapi-utils": "3.0.0-alpha.25.2",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "test": "jest --forceExit --verbose",
-    "postinstall": "node lib/utils/success.js"
+    "postinstall": "node lib/utils/success.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": {
     "email": "hi@strapi.io",
@@ -102,5 +105,6 @@
     "npm": ">= 6.0.0"
   },
   "preferGlobal": true,
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
