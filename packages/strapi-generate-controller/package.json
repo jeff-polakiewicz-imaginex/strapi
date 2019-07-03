@@ -14,11 +14,13 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "test": "echo \"no tests yet\"",
-    "prepublish": "npm prune"
+    "prepublish": "npm run snyk-protect; npm prune",
+    "snyk-protect": "snyk protect"
   },
   "author": {
     "email": "hi@strapi.io",
@@ -43,5 +45,6 @@
     "node": ">= 10.0.0",
     "npm": ">= 6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
