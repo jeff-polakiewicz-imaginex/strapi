@@ -21,7 +21,9 @@
   "license": "MIT",
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"{lib,__{tests,mocks}__}/**/*.js\"",
-    "test": "echo \"no tests yet\""
+    "test": "echo \"no tests yet\"",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "lint:admin"
@@ -110,6 +112,8 @@
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "styled-components": "^3.2.6",
-    "whatwg-fetch": "^2.0.3"
-  }
+    "whatwg-fetch": "^2.0.3",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
