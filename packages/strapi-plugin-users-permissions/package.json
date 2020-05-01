@@ -19,7 +19,9 @@
     "generate": "node ./node_modules/plop/plop.js --plopfile node_modules/strapi-helper-plugin/lib/internals/generators/index.js",
     "prettier": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/prettier --single-quote --trailing-comma es5 --write \"{admin,__{tests,mocks}__}/**/*.js\"",
     "test": "echo \"no tests yet\"",
-    "prepublishOnly": "IS_MONOREPO=true npm run build"
+    "prepublishOnly": "IS_MONOREPO=true npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -30,7 +32,8 @@
     "purest": "^2.0.1",
     "request": "^2.83.0",
     "strapi-utils": "3.0.0-alpha.25.2",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "strapi-helper-plugin": "3.0.0-alpha.25.2"
@@ -55,5 +58,6 @@
     "node": ">= 10.0.0",
     "npm": ">= 6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
