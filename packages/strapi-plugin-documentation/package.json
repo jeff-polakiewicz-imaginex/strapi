@@ -20,13 +20,16 @@
     "lint": "node ./node_modules/strapi-lint/node_modules/.bin/eslint --ignore-path .gitignore --ignore-pattern '/admin/build/' --config ./node_modules/strapi-lint/lib/internals/eslint/.eslintrc.json admin",
     "prettier": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/prettier --single-quote --trailing-comma es5 --write \"{admin,__{tests,mocks}__}/**/*.js\"",
     "test": "echo \"no tests yet\"",
-    "prepublishOnly": "IS_MONOREPO=true npm run build"
+    "prepublishOnly": "IS_MONOREPO=true npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "moment": "^2.22.2",
     "path-to-regexp": "^2.4.0",
-    "swagger-ui-dist": "^3.18.3-republish2"
+    "swagger-ui-dist": "^3.18.3-republish2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -70,5 +73,6 @@
     "node": ">= 9.0.0",
     "npm": ">= 5.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
